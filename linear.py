@@ -74,7 +74,6 @@ loss_func = torch.nn.MSELoss(reduction='sum')
 print("Summary of loss function...")
 display.display(loss_func)
 
-
 # defines the SGD optimizer
 learning_rate = 1e-4
 optimizer = torch.optim.SGD([w_tensor], lr=learning_rate)
@@ -161,7 +160,6 @@ loss_func = torch.nn.CrossEntropyLoss()
 print("Summary of loss function...")
 display.display(loss_func)
 
-
 # defines the rmsprop optimizer
 learning_rate = 1e-3
 optimizer = torch.optim.RMSprop(model.parameters(), lr=learning_rate)
@@ -171,7 +169,6 @@ display.display(optimizer)
 
 print("\n\n List of parameters to optimize...")
 display.display(optimizer.param_groups)
-
 
 # Calculates the probability of belonging to each class
 yhat = model(x_tensor)
