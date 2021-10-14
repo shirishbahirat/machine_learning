@@ -72,17 +72,17 @@ plt.show()
 loss_func = torch.nn.MSELoss(reduction='sum')
 
 print("Summary of loss function...")
-display.display(loss_func)
+#display.display(loss_func)
 
 # defines the SGD optimizer
 learning_rate = 1e-4
 optimizer = torch.optim.SGD([w_tensor], lr=learning_rate)
 
 print("\n\nSummary of optimizer...")
-display.display(optimizer)
+#display.display(optimizer)
 
 print("\n\n List of parameters to optimize...")
-display.display(optimizer.param_groups)
+#display.display(optimizer.param_groups)
 
 # optimization loop
 for e in range(100):
@@ -98,8 +98,8 @@ for e in range(100):
     line2.set_ydata(np.linspace(0,1,100) * w_tensor.detach().numpy())
     ax.set_title(f'W={w_tensor.detach().numpy()} : Loss = {loss.item()}')
   
-    display.clear_output(wait=True)
-    display.display(fig)
+    #display.clear_output(wait=True)
+    #display.display(fig)
     time.sleep(0.1)
   
   # default steps to optimize the weights through backpropagation
@@ -158,17 +158,17 @@ y_tensor = torch.from_numpy(y)
 loss_func = torch.nn.CrossEntropyLoss()
 
 print("Summary of loss function...")
-display.display(loss_func)
+#display.display(loss_func)
 
 # defines the rmsprop optimizer
 learning_rate = 1e-3
 optimizer = torch.optim.RMSprop(model.parameters(), lr=learning_rate)
 
 print("\n\nSummary of optimizer...")
-display.display(optimizer)
+#display.display(optimizer)
 
 print("\n\n List of parameters to optimize...")
-display.display(optimizer.param_groups)
+#display.display(optimizer.param_groups)
 
 # Calculates the probability of belonging to each class
 yhat = model(x_tensor)
@@ -198,15 +198,15 @@ for e in range(51):
     c = cmap[(yhat_tensor.argmax(axis=1).detach().numpy().flatten() > 0.5).astype(int)]
     line1.set_color(c)
     ax.set_title(f'Loss = {loss.item()}')
-    display.clear_output(wait=True)
-    display.display(fig)
+    #display.clear_output(wait=True)
+    #display.display(fig)
     time.sleep(0.1)
   
   # default steps to optimize the weights through backpropagation
   # unless you know what you are doing I would recommend to keep this as is
   optimizer.zero_grad()
   loss.backward()
-  optimizer.step()
+  #optimizer.step()
 
 
 
